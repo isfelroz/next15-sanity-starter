@@ -1,17 +1,29 @@
 import { definePlugin } from 'sanity'
 import { structureTool } from 'sanity/structure'
-import { structure } from './src/structure'
-import { schema } from './src/schema'
+import { webStructure } from './src/structure'
+import { internationalizationSchemas, schema } from './src/schema'
+import { documentInternationalization } from '@sanity/document-internationalization'
+import { I18n } from '../../../../i18n-config'
 
-export default function sanityWebkit() {
+export default function sanityWebkit({ i18n }: { i18n: I18n }) {
+    const plugins = [
+        structureTool({
+            title: 'Content',
+            structure: (S) => webStructure({ S, i18n }),
+        }),
+    ]
+
+    if (i18n?.languages && i18n?.languages?.length > 1) {
+        plugins.push(
+            documentInternationalization({
+                supportedLanguages: i18n.languages,
+                schemaTypes: internationalizationSchemas,
+            })
+        )
+    }
     return definePlugin({
         name: 'sanity-webkit',
-        plugins: [
-            structureTool({
-                title: 'Content',
-                structure,
-            }),
-        ],
+        plugins,
         schema,
     })()
 }

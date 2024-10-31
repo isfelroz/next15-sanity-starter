@@ -11,10 +11,11 @@ import { defineConfig } from 'sanity'
 import { apiVersion, dataset, projectId } from './src/sanity/env'
 
 import webkitPlugin from './src/sanity/plugins/sanityWebkit'
+import { i18n } from './i18n-config'
 
 export default defineConfig({
     basePath: '/studio',
     projectId,
     dataset,
-    plugins: [webkitPlugin(), visionTool({ defaultApiVersion: apiVersion })],
+    plugins: [webkitPlugin({ i18n }), visionTool({ defaultApiVersion: apiVersion })],
 })

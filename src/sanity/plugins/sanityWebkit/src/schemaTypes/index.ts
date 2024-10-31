@@ -1,7 +1,9 @@
 import blog from './documents/blog'
 import form from './documents/form'
 import home from './documents/home'
+import menu from './documents/menu'
 import page from './documents/page'
+import webSettings from './documents/web-settings'
 import mainPageContent from './objects/main-page-content'
 import mainPageInfo from './objects/main-page-info'
 import sectionForm from './objects/sections/section-form'
@@ -17,6 +19,8 @@ const shcemas = [
     page,
     form,
     blog,
+    menu,
+    webSettings,
     mainPageContent,
     mainPageInfo,
     sectionForm,

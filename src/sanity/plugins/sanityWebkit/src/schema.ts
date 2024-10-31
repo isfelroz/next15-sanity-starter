@@ -4,3 +4,5 @@ import schemaTypes from './schemaTypes'
 export const schema: { types: SchemaTypeDefinition[] } = {
     types: schemaTypes,
 }
+
+export const internationalizationSchemas = ['home', 'page', 'form', 'blog', 'menu']

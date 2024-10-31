@@ -3,7 +3,7 @@ const languages = [
     { id: 'en', title: 'English' },
 ]
 
-const i18n = {
+const i18n: I18n = {
     languages,
     base: languages.find((item) => item.isDefault)?.id,
 }
@@ -11,4 +11,14 @@ const i18n = {
 const googleTranslateLanguages = languages.map(({ id, title }) => ({ id, title }))
 
 export { i18n, googleTranslateLanguages }
-export type Locale = typeof languages
+
+export type Locale = {
+    id: string
+    title: string
+    isDefault?: boolean
+}
+
+export type I18n = {
+    languages: Locale[]
+    base: string | undefined
+}
