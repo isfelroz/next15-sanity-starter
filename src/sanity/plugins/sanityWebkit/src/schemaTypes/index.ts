@@ -1,6 +1,5 @@
 import blog from './documents/blog'
 import form from './documents/form'
-import home from './documents/home'
 import menu from './documents/menu'
 import page from './documents/page'
 import webSettings from './documents/web-settings'
@@ -15,7 +14,6 @@ import sharedSeo from './objects/shared/shared-seo'
 import sharedText from './objects/shared/shared-text'
 
 const shcemas = [
-    home,
     page,
     form,
     blog,

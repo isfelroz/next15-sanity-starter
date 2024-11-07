@@ -5,4 +5,4 @@ export const schema: { types: SchemaTypeDefinition[] } = {
     types: schemaTypes,
 }
 
-export const internationalizationSchemas = ['home', 'page', 'form', 'blog', 'menu']
+export const internationalizationSchemas = ['page', 'form', 'blog', 'menu']

@@ -6,7 +6,6 @@ export const webStructure = ({ S, i18n }: { S: StructureBuilder; i18n: I18n }) =
     return S.list()
         .title('Content')
         .items([
-            locationsDocumentStructure(S, 'home'),
             locationsDocumentStructure(S, 'page'),
             locationsDocumentStructure(S, 'blog'),
             S.divider(),

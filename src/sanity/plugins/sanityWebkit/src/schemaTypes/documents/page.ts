@@ -1,7 +1,7 @@
 import { isUniqueAcrossSameLangue } from '../../utils'
 import { IoDesktopOutline } from 'react-icons/io5'
 
-import { defineType, defineField } from 'sanity'
+import { defineField, defineType } from 'sanity'
 
 export default defineType({
     name: 'page',
@@ -26,18 +26,11 @@ export default defineType({
     ],
     fields: [
         defineField({
-            // should match 'languageField' plugin configuration setting, if customized
-            name: 'language',
-            type: 'string',
-            readOnly: true,
-            hidden: true,
-        }),
-        defineField({
             name: 'title',
             title: 'Title',
             type: 'string',
-            group: 'info',
             validation: (rule) => rule.required(),
+            group: 'info',
         }),
         defineField({
             name: 'slug',
@@ -52,9 +45,11 @@ export default defineType({
             validation: (rule) => rule.required(),
         }),
         defineField({
-            name: 'info',
-            type: 'pageinfo',
-            title: 'Global Information',
+            // should match 'languageField' plugin configuration setting, if customized
+            name: 'language',
+            type: 'string',
+            readOnly: true,
+            hidden: false,
             group: 'info',
         }),
         defineField({
@@ -64,10 +59,10 @@ export default defineType({
             group: 'content',
         }),
         defineField({
+            title: 'Seo',
             name: 'seo',
-            type: 'shared.seo',
-            title: 'SEO',
             group: 'seo',
+            type: 'seoMetaFields',
         }),
     ],
     preview: {
